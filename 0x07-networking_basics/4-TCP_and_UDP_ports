@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Grabs all listening sockets with PID and name of each socket owner.
+netstat -lp
