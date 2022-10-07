@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+for (( c=1; c<=10 ; c++ ))
+do printf "Best School\n"
+done

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Stops highlander loop with pkill ; see "man trap" for numeric signal names
+pkill -f -9 7-highlander

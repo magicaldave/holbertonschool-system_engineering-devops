@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script parses a specific apache log, and captures fields 1-9 which /should/ represent hostname and exit code. It is automatically grouped by host thanks to awk.
+if [ -e apache-access.log ]
+then
+    echo "The logfile exists."
+else    
+    wget http://intranet-projects-files.s3.amazonaws.com/holbertonschool-sysadmin_devops/80/apache-access.log
+fi
+awk '{print $1, $9}' apache-access.log

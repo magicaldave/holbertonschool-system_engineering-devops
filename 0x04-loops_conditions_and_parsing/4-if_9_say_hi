@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Set a counter to 0 ; WHILE less than 10, echo "Best School" and increment counter by 1 - this version adds an if statement to also echo "Hi" on the ninth iteration
+i="0"
+while  [ "$i" -lt "10" ] 
+do echo "Best School"
+   ((i++))
+   if [ "$i" -eq "9" ]
+   then
+       echo "Hi"
+   fi
+done

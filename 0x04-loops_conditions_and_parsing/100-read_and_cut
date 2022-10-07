@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#! This script reads /etc/password, cuts out fields 1,3,6, and prints it to stdout.
+passwd="/etc/passwd"
+while read -r data
+do echo "$data" | cut -d ":" -f1,3,6
+done < $passwd

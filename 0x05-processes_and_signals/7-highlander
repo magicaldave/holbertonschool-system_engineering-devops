@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is an endless loop which prints "to infinity and beyond" with a wait of two second in between
+while BUZZLIGHTYEAR="To infinity and beyond"
+do echo "$BUZZLIGHTYEAR"
+   sleep 2
+   trap 'echo "I am invincible!!!"' 15
+done

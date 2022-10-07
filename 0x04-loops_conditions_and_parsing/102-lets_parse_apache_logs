@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script parses a specific apache log, and captures fields 1-9 which /should/ represent hostname and exit code. It is automatically grouped by host thanks to awk.
+awk  '{print $1, $9}' apache-access.log

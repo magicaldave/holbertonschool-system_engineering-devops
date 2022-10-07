@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#This script outputs the numbers 1-20, then inputs "bad luck from x" where X is a specific country
+i="1"
+while [ "$i" -le "20" ]
+do
+    printf "%s\n" $i
+    case $i in
+	4)
+	    echo "bad luck from China"
+	    ;;
+	9)
+	    echo "bad luck from Japan"
+	    ;;
+	17)
+	    echo "bad luck from Italy"
+	    ;;
+    esac
+((i++))
+done

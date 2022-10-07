@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# I added a comment here for test purposes
+h="0"
+while [ "$h" -le "12" ]
+      do printf "Hour: %s\n" $h
+      	 printf "%s\n" {1..59}
+	 ((h++))
+done

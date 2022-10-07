@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This script prints all running processes containing the word "bash" in the line
+ps -e u | grep "bash"

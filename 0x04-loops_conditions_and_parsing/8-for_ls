@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This lists a directory's contents, then removes the leading #-
+cwdlist="$(ls)"
+for f in $cwdlist
+do
+    printf "%s\n" "$f" | cut -d "-" -f2
+done

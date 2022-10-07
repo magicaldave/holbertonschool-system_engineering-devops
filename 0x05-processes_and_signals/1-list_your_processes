@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This script outputs all running processes in user-oriented format, sorted by process hierarchy
+ps -He u
