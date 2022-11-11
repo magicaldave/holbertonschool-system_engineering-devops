@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Generates a 4096-bit RSA key called school with passkey betty
+ssh-keygen -b 4096 -f school -N betty -t rsa
