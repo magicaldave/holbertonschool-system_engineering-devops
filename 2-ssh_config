@@ -1,0 +1,55 @@
+Loading pnacl program... done.
+Connecting to ubuntu@100.26.52.40...
+OpenSSH_8.8p1, OpenSSL 1.0.2k  26 Jan 2017
+debug1: Authenticator provider $SSH_SK_PROVIDER did not resolve; disabling
+debug1: Connecting to 100.26.52.40 [100.26.52.40] port 22.
+debug1: Connection established.
+debug1: getpeername failed: Function not implemented
+debug1: identity file /.ssh/identity/school type 0
+debug1: identity file /.ssh/identity/school-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_8.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_8.2p1 Ubuntu-4ubuntu0.5
+debug1: compat_banner: match: OpenSSH_8.2p1 Ubuntu-4ubuntu0.5 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 100.26.52.40:22 as 'ubuntu'
+debug1: load_hostkeys: fopen /.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen //etc/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen //etc/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:cE4i6CcMRFPOinT66vXqWTH0mgODgHBk9hvVWdufCMc
+debug1: load_hostkeys: fopen /.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen //etc/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen //etc/ssh_known_hosts2: No such file or directory
+debug1: Host '100.26.52.40' is known and matches the ED25519 host key.
+debug1: Found key in /.ssh/known_hosts:1
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: Will attempt key: /.ssh/identity/school RSA SHA256:cl/xA9TZSVEPZObPzAVl+ugrpEgpDbZOu/9lIOms1V4 explicit
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: /.ssh/identity/school RSA SHA256:cl/xA9TZSVEPZObPzAVl+ugrpEgpDbZOu/9lIOms1V4 explicit
+debug1: Server accepts key: /.ssh/identity/school RSA SHA256:cl/xA9TZSVEPZObPzAVl+ugrpEgpDbZOu/9lIOms1V4 explicit
+Authenticated to 100.26.52.40 ([UNKNOWN]:-1) using "publickey".
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Sending environment.
+debug1: channel 0: setting env COLORTERM = "truecolor"
+debug1: channel 0: setting env NCURSES_NO_UTF8_ACS = "1"
+debug1: channel 0: setting env TERM = "xterm-256color"
