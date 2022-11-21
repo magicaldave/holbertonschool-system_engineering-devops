@@ -2,6 +2,7 @@
 # This script installs and does some basic configuration to an nginx service
 apt-get update && apt -y upgrade
 apt-get install -y nginx
+/etc/init.d/nginx start
 chown -R $USER:$USER /var/www/
 chmod -R 755 /var/www
 echo "Hello World" > /var/www/index.nginx-debian.html
