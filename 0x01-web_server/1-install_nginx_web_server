@@ -5,5 +5,5 @@ apt-get install -y nginx
 /etc/init.d/nginx start
 chown -R $USER:$USER /var/www/
 chmod -R 755 /var/www
-echo "Hello World" > /var/www/index.nginx-debian.html
+echo "Hello World\n" | sudo tee /var/www/index.nginx-debian.html
 /etc/init.d/nginx restart
