@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script installs and does some basic configuration to an nginx service
+apt-get install -y nginx
+chown -R $USER:$USER /var/www/
+chmod -R 755 /var/www
+echo "Hello World" > /var/www/index.nginx-debian.html
