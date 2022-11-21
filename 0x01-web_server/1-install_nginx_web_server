@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script installs and does some basic configuration to an nginx service
 sudo apt-get update && apt -y upgrade
-sudo pt-get install -y nginx
+sudo apt-get install -y nginx
 sudo /etc/init.d/nginx start
 sudo chown -R $USER:$USER /var/www/
 sudo chmod -R 755 /var/www
