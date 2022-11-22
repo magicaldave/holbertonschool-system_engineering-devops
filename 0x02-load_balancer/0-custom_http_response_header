@@ -1,27 +1,22 @@
 #!/usr/bin/env bash
-# Install nginx and add custom header to server
+# This script installs nginx on 4905-web-nn web server
+# This script creates a custom HTTP header named X-Served-By
+# The value of X-Served-By is the hostname of the server Nginx is running on
+#
 
-sudo apt update && sudo apt -y upgrade
+find="^\tlocation / {"
+replace301="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
+replace404="\terror_page 404 /error404.html;\n\n\tlocation / {"
+add_header="\tlocation / {\n\t\tadd_header X-Served-By "$HOSTNAME";"
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get install -y nginx
-
-mkdir -p /var/www/html
-sudo touch /var/www/html/index.html
-echo "Hello World" > /var/www/html/index.html
-sudo touch /var/www/html/404.html
-echo "Ceci n'est pas une page" > sudo var/www/html/404.html
-
-printf %s "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
-    root   /var/www/html;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 http://oktechguru.com;
-    }
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-    }
-}" > sudo /etc/nginx/sites-available/default
+sudo rm /var/www/html/*.html
+sudo echo "Hello World" | sudo tee /var/www/html/index.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+sudo sed -i "s|$find|$replace301|" /etc/nginx/sites-available/default
+sudo sed -i "s|$find|$replace404|" /etc/nginx/sites-available/default
+sudo sed -i "s|$find|$add_header|" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
