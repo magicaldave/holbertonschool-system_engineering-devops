@@ -14,5 +14,5 @@ sudo echo "Hello World" | sudo tee /var/www/html/index.html
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
 sudo sed -i "s|$find|$replace301|" /etc/nginx/sites-available/default
 sudo sed -i "s|$find|$replace404|" /etc/nginx/sites-available/default
-sudo service nginx restart
-sudo service nginx reload
+sudo /etc/init.d/nginx restart
+sudo /etc/init.d/nginx reload
