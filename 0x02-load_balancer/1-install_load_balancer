@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script installs and configures HAproxy load balancer
-# HAproxy will send traffic to 4905-web-01 and 4905-web-02
+# HAproxy will send traffic to 4924-web-01 and 4924-web-02
 # Requests will be distributed using round robin algorithm
 
 config_frontend="\nfrontend main\n\tbind *:80\n\tmode http\n\tdefault_backend web_servers\n"
