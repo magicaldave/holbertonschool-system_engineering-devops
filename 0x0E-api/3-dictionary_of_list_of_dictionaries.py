@@ -32,7 +32,7 @@ if __name__ == "__main__":
         }
         task_list.append(dictionary)
     # Create an array that represents the data to store in the table
-    tasks[USER_ID] = task_list
+    tasks[user_id] = task_list
     # Open the file to write to and write it as JSON
     with open('todo_all_employees.json', 'w', encoding='UTF8',
               newline='') as outfile:
