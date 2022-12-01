@@ -21,18 +21,24 @@ if __name__ == "__main__":
     # Load the information sent back as variables
     user_info = json.loads(employee_id.text)
     todo_info = json.loads(todo_list.text)
+
+    task_list = []
     # Grab the employee's name from your new dictionary
-    EMPLOYEE_NAME = user_info['name']
-    # Count and compare total and completes tasks
+    USERNAME = user_info['username']
+    # Gather the information into a dictionary
     for task in todo_info:
-        TOTAL_NUMBER_OF_TASKS += 1
-        if task['completed']:
-            NUMBER_OF_DONE_TASKS += 1
-    # Print the results
-    print("Employee {} is done with tasks({}/{}):"
-          .format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS)
-          )
-    # Print completed tasks in particular
-    for task in todo_info:
-        if task['completed']:
-            print("\t {}".format(task['title']))
+        data2csv = {
+            'USER_ID': USER_ID,
+            'USERNAME': USERNAME,
+            'TASK_COMPLETED_STATUS': task['completed'],
+            'TASK_TITLE': task['title']
+        }
+        task_list.append(data2csv)
+    # Create an array that represents the data to store in the table
+    fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+    # Open the file to write to
+    with open('./{}.csv'.format(USER_ID), 'w', encoding='UTF8',
+              newline='') as outfile:
+        writer = csv.DictWriter(outfile, fieldnames=fieldnames,
+                                quoting=csv.QUOTE_ALL, quotechar='"')
+        writer.writerows(task_list)
