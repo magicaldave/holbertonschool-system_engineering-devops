@@ -32,6 +32,6 @@ if __name__ == "__main__":
     # Create an array that represents the data to store in the table
     tasks[USER_ID] = task_list
     # Open the file to write to and write it as JSON
-    with open('./{}.csv'.format(USER_ID), 'w', encoding='UTF8',
+    with open('./{}.json'.format(USER_ID), 'w', encoding='UTF8',
               newline='') as outfile:
         outfile.write(json.dumps(tasks))
