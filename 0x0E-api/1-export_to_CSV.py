@@ -10,13 +10,13 @@ if __name__ == "__main__":
     # Initialize tasks and grab username
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
-    user = sys.argv[1]
+    USER_ID = sys.argv[1]
     # Request the employee ID, then their todo list.
     employee_id = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}'.format(user)
+        'https://jsonplaceholder.typicode.com/users/{}'.format(USER_ID)
     )
     todo_list = requests.get(
-        'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(user)
+        'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(USER_ID)
     )
     # Load the information sent back as variables
     user_info = json.loads(employee_id.text)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Gather the information into a dictionary
     for task in todo_info:
         data2csv = {
-            'USER_ID': user,
+            'USER_ID': USER_ID,
             'USERNAME': USERNAME,
             'TASK_COMPLETED_STATUS': task['completed'],
             'TASK_TITLE': task['title']
