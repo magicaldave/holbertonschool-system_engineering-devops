@@ -22,18 +22,18 @@ if __name__ == "__main__":
             .format(user_id)
         )
         todo_info = json.loads(todo_list.text)
-    task_list = []
-    # Gather the information into a dictionary
-    for task in todo_info:
-        dictionary = {
-            'username': user_info['username'],
-            'task': task['title'],
-            'completed': task['completed']
-        }
-        task_list.append(dictionary)
+        task_list = []
+        # Gather the information into a dictionary
+        for task in todo_info:
+            dictionary = {
+                'username': user_info['username'],
+                'task': task['title'],
+                'completed': task['completed']
+            }
+            task_list.append(dictionary)
     # Create an array that represents the data to store in the table
-    tasks[user_id] = task_list
+        tasks[user_id] = task_list
     # Open the file to write to and write it as JSON
-    with open('todo_all_employees.json', 'w', encoding='UTF8',
+        with open('todo_all_employees.json', 'w', encoding='UTF8',
               newline='') as outfile:
-        outfile.write(json.dumps(tasks))
+            outfile.write(json.dumps(tasks))
