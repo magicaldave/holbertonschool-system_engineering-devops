@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Gather the information into a dictionary
     for task in todo_info:
         data2csv = {
-            'USER_ID': USER_ID,
+            'USER_ID': user,
             'USERNAME': USERNAME,
             'TASK_COMPLETED_STATUS': task['completed'],
             'TASK_TITLE': task['title']
