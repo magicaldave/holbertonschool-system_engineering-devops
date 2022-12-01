@@ -39,6 +39,6 @@ if __name__ == "__main__":
     # Open the file to write to
     with open('./{}.csv'.format(USER_ID), 'w', encoding='UTF8',
               newline='') as outfile:
-        writer = csv.DictWriter(outfile, fieldnames=fieldnames,
+        writer = csv.DictWriter(outfile, fieldnames=fields,
                                 quoting=csv.QUOTE_ALL, quotechar='"')
         writer.writerows(task_list)
