@@ -26,9 +26,9 @@ if __name__ == "__main__":
     # Gather the information into a dictionary
     for task in todo_info:
         dictionary = {
+            'username': user_info['username'],
             'task': task['title'],
-            'completed': task['completed'],
-            'username': user_info['username']
+            'completed': task['completed']
         }
         task_list.append(dictionary)
     # Create an array that represents the data to store in the table
