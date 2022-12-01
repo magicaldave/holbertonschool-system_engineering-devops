@@ -35,5 +35,5 @@ if __name__ == "__main__":
         tasks[user_id] = task_list
     # Open the file to write to and write it as JSON
         with open('todo_all_employees.json', 'w', encoding='UTF8',
-              newline='') as outfile:
+                  newline='') as outfile:
             outfile.write(json.dumps(tasks))
