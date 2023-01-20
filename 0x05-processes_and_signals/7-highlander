@@ -5,3 +5,4 @@ do echo "$BUZZLIGHTYEAR"
    sleep 2
    trap 'echo "I am invincible!!!"' 15
 done
+./7-highlander &
